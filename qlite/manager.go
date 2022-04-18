@@ -21,6 +21,7 @@ func New(conf *Config) (*Manager, error) {
 	if err != nil {
 		return nil, err
 	}
+	go c.Run()
 	return &Manager{
 		client: c,
 		handler: protocol.New(),
